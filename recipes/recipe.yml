@@ -46,6 +46,7 @@ modules:
         - org.mozilla.Thunderbird
         - org.mozilla.firefox
         - org.signal.Signal
+        - io.dbeaver.DBeaverCommunity
       remove:
         - org.gnome.eog
     user: {} # Also add Flathub user repo, but no user packages
