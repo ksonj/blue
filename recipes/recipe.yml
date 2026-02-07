@@ -38,6 +38,10 @@ modules:
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
         scope: system
+        repo:
+          name: flathub
+          title: Flathub (full)
+          url: https://dl.flathub.org/repo/flathub.flatpakrepo
       # If no repo information is specified, Flathub will be used by default
         install:
           - com.jgraph.drawio.desktop
