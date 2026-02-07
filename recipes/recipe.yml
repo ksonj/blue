@@ -25,6 +25,9 @@ modules:
       - ghostty
       - strace
       - davfs2  # Mount WebDAV shares
+      - qjackctl
+      - fluidsynth
+      - qsynth
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
@@ -35,6 +38,9 @@ modules:
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
         scope: system
+        repo:
+          name: flathub
+          title: Flathub
       # If no repo information is specified, Flathub will be used by default
         install:
           - com.jgraph.drawio.desktop
