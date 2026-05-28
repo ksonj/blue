@@ -18,8 +18,6 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
 
   - type: rpm-ostree
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/pgdev/ghostty/repo/fedora-%OS_VERSION%/pgdev-ghostty-fedora-%OS_VERSION%.repo
     install:
       - distrobox
       - ghostty
@@ -51,7 +49,7 @@ modules:
           - org.gimp.GIMP
           - org.kde.okular
           - org.libreoffice.LibreOffice
-          - org.mozilla.Thunderbird
+          - org.mozilla.thunderbird
           - org.mozilla.firefox
           - org.signal.Signal
           - io.dbeaver.DBeaverCommunity
