@@ -20,7 +20,11 @@ modules:
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/scottames/ghostty/repo/fedora-%OS_VERSION%/scottames-ghostty-fedora-%OS_VERSION%.repo
+      - https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo
+    keys:
+      - https://pkg.cloudflareclient.com/pubkey.gpg
     install:
+      - cloudflare-warp  # Cloudflare One Client (WARP)
       - distrobox
       - ghostty
       - strace
@@ -33,6 +37,14 @@ modules:
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+
+  - type: systemd
+    system:
+      enabled:
+        - warp-svc.service # Cloudflare One daemon
+    user:
+      enabled:
+        - warp-desktop-svc.service # per-user GUI backend (systemctl --global)
 
   - type: default-flatpaks
     configurations:
